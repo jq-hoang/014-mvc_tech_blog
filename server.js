@@ -54,5 +54,9 @@ sequelize.sync({ force: false }).then(() => {
 
 
 // models
-// seeds
+// seeds -- completed 
 // views 
+
+// model's index.js -- completed  
+// need help with: models, and controllers. 
+

@@ -1,43 +1,38 @@
 // import models
-const Product = require('./Product');
-const Category = require('./Category');
-const Tag = require('./Tag');
-const ProductTag = require('./ProductTag');
+const Post = require('./Post');
+const User = require('./User');
+const Comment = require('./Comment');
 
-// Products belongsTo Category
-Product.belongsTo(Category, {
-  foreignKey: 'category_id',
+// Post belongsTo User 
+Post.belongsTo(User, {
+  foreignKey: 'user_id',
   onDelete: 'CASCADE'
 })
-// Categories have many Products
-Category.hasMany(Product, {
-  foreignKey: 'category_id',
+// **post must have user_id field as a foreign key**
+
+
+// Posts have many Comments.
+Post.hasMany(Comment, {
+  foreignKey: 'post_id',
   onDelete: 'CASCADE'
 })
 
-// Products belongToMany Tags (through ProductTag)
-Product.belongsToMany(Tag, {
-  through: {
-    model: ProductTag,
-    unique: false
-  },
-  foreignKey: 'product_id',
-  onDelete: 'SET NULL'
+// Comment belongsTo User 
+Comment.belongsTo(User, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
 })
+// when using belongsto foreign key is whatever is in front of belongsTo. 
+// hasmany is whatever is after 'hasmany.'
 
 
-// Tags belongToMany Products (through ProductTag)
-Tag.belongsToMany(ProductTag, {
-  through:{
-    model: ProductTag,
-    unique: false, 
-  },
-  foreignKey: 'product_id',
-  onDelete: 'SET NULL'
-})
 module.exports = {
-  Product,
-  Category,
-  Tag,
-  ProductTag,
+  Post,
+  User,
+  Comment,
 };
+
+// User has many posts
+// post belongs to a user 
+// a post can have many comments 
+// each comment, belongs to a user
