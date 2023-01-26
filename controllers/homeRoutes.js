@@ -24,12 +24,26 @@ router.get("/home", async (req, res) => {
 router.get('/posts', (req, res) => {
   // Retrieve the data from the database
   Post.findAll({ include: User }).then((post) => {
+    // console.log(post[0].get({plain: true}))
+  
+    const formattedPost = []
 
+    for (let i = 0; i < post.length; i++) {
+      formattedPost.push(post[i].get({plain: true}))
+      console.log('post[i].get({plain: true} ~>', post[i].get({plain: true}))
+      
+    }
+
+    console.log('formattedPost ~>', formattedPost);
+    res.render('posts', {formattedPost})
+
+
+    // console.log('post ~>', post);
     // Pass the data to the view
-    res.render('posts', { post });
-    console.log('post ~>', post)
-    const TEST_VARIABLE = post
-    console.log('TEST_VARIABLE[0] ~>', TEST_VARIABLE[0]);
+    // res.render('posts', { post });
+    // console.log('post ~>', post)
+    // const TEST_VARIABLE = post
+    // console.log('TEST_VARIABLE[0] ~>', TEST_VARIABLE[0]);
   });
 });
 

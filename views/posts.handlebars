@@ -1,11 +1,11 @@
-{{#each post}}
+{{#each formattedPost}}
   <div id="blog-post" class="bg-stone-400 text-white p-4">
-    <h2 class="text-2xl font-medium">{{post.title}}</h2>
-    <p class="py-2">{{post.description}}</p>
+    <h2 class="text-2xl font-medium">{{title}}</h2>
+    <p class="py-2">{{description}}</p>
     <div id="author-date" class="text-sm font-medium">
-      <span>Author: {{post.user.name}}</span>
+      <span>Author: {{user.name}}</span>
       <span class="px-2">|</span>
-      <span>Post Date: {{post.date_created}}</span>
+      <span>Post Date: {{date_created}}</span>
     </div>
   </div>
 {{/each}}
