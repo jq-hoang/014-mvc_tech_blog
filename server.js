@@ -53,10 +53,21 @@ sequelize.sync({ force: false }).then(() => {
 });
 
 
-// models
 // seeds -- completed 
-// views 
-
 // model's index.js -- completed  
-// need help with: models, and controllers. 
+// models - completed
+
+// to do: 
+// seed dummy data into blog posts
+// create login/signup functionality 
+// views 
+// controllers aka routes  - completed
+
+
+
+
+// need help with: 
+
+
+
 
