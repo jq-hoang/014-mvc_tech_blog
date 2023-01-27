@@ -6,6 +6,7 @@ const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 const bcrypt = require("bcrypt");
 const dotenv = require('dotenv').config()
+const moment = require('moment');
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -56,9 +57,10 @@ sequelize.sync({ force: false }).then(() => {
 // seeds -- completed 
 // model's index.js -- completed  
 // models - completed
+// seed dummy data into blog posts - grueling. but completed. 
 
 // to do: 
-// seed dummy data into blog posts
+
 // create login/signup functionality 
 // views 
 // controllers aka routes  - completed

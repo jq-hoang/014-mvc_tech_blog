@@ -12,10 +12,19 @@ Post.belongsTo(User, {
 
 
 // Posts have many Comments.
+
+Comment.belongsTo(Post, { foreignKey: 'post_id'});
+// Post.hasMany(Comment, { foreignKey: 'post_id'});
+
 Post.hasMany(Comment, {
   foreignKey: 'post_id',
   onDelete: 'CASCADE'
 })
+
+Post.hasMany(Comment);
+Comment.belongsTo(Post, {
+  foreignKey: 'post_id'
+});
 
 // Comment belongsTo User 
 Comment.belongsTo(User, {
@@ -24,6 +33,8 @@ Comment.belongsTo(User, {
 })
 // when using belongsto foreign key is whatever is in front of belongsTo. 
 // hasmany is whatever is after 'hasmany.'
+
+
 
 
 module.exports = {
@@ -36,3 +47,7 @@ module.exports = {
 // post belongs to a user 
 // a post can have many comments 
 // each comment, belongs to a user
+
+
+// As it is currently set up, comments belong to users.
+// Should there be an author_id and commenter_id to sort this out? 

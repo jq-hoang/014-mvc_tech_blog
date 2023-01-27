@@ -15,7 +15,7 @@ Post.init(
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: DataTypes.NOW,
+      defaultValue: DataTypes.NOW
     },
     id: {
       type: DataTypes.INTEGER,
@@ -39,5 +39,5 @@ Post.init(
     modelName: 'post',
   }
 );
-
 module.exports = Post;
+

@@ -1,19 +1,13 @@
-<div id="blog-post">
-    <h2>{{title}}</h2>
-    <p>{{body}}</p>
-    <div id="author-date">
-        <span>Author: {{author}}</span>
-        <span>Post Date: {{date}}</span>
+{{#each formattedPost}}
+  <div id="blog-post" class="bg-stone-400 text-white p-4 mt-4">
+    <h2 class="text-2xl font-medium">{{title}}</h2>
+    <p class="py-2">{{description}}</p>
+    <div id="author-date" class="text-sm font-medium">
+      <span>Author: {{user.name}}</span>
+      <span class="px-2">|</span>
+      <span>Post Date: {{formattedDate}}</span>
+      <span>Comments: {{currentPost.Comments.comment}} </span>
+
     </div>
-</div>
-
-
-{{#each items}}
-  <div>
-    <button class="large-button">Button 1</button>
-    <button class="large-button">Button 2</button>
   </div>
 {{/each}}
-<style>
-  .large-button { font-size: 18px; padding: 20px; }
-</style>

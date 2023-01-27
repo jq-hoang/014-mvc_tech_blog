@@ -18,14 +18,24 @@ Comment.init(
     post_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
+      foreignKey: true,
+      references: {
+        model: "post",
+        key: "id",
+      },
     },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "user",
-        key: "id",
+        model: 'user',
+        key: 'id',
       },
+    },
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
     },
   },
   {

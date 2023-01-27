@@ -1,11 +1,15 @@
 {{#each formattedPost}}
-  <div id="blog-post" class="bg-stone-400 text-white p-4">
+  <div id="blog-post" class="bg-stone-400 text-white p-4 mt-4">
     <h2 class="text-2xl font-medium">{{title}}</h2>
     <p class="py-2">{{description}}</p>
     <div id="author-date" class="text-sm font-medium">
       <span>Author: {{user.name}}</span>
       <span class="px-2">|</span>
-      <span>Post Date: {{date_created}}</span>
+      <span>Post Date: {{formattedDate}}</span>
+      <span>Comments: {{currentPost.Comments.comment}} </span>
+
     </div>
   </div>
 {{/each}}
+
+{{!-- // Hello {{logged_in_user}}! --}}
