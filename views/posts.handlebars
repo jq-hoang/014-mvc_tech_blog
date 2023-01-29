@@ -1,15 +1,29 @@
-{{#each formattedPost}}
-  <div id="blog-post" class="bg-stone-400 text-white p-4 mt-4">
+<div class="container">
+  <h1>Welcome {{#if user}}{{user.firstName}}{{else}}guest{{/if}}!</h1>
+  {{#if user}}
+    <a href="/create-post" class="btn btn-primary">Create a new post</a>
+  {{/if}}
+  <hr>
+  <h2>Recent Posts</h2>
+  <div class="row">
+    {{#each formattedPost}}
+  <div id="blog-post" class="bg-stone-400 text-black p-4 mt-4">
     <h2 class="text-2xl font-medium">{{title}}</h2>
     <p class="py-2">{{description}}</p>
     <div id="author-date" class="text-sm font-medium">
       <span>Author: {{user.name}}</span>
       <span class="px-2">|</span>
       <span>Post Date: {{formattedDate}}</span>
-      <span>Comments: {{currentPost.Comments.comment}} </span>
+      {{#each comments}}
+        <p class="text-white mt-4">Comments: {{this.comment}}
+        <span>by: {{user.name}}</span>
+        </p>
+      {{/each}}
 
     </div>
   </div>
 {{/each}}
 
 {{!-- // Hello {{logged_in_user}}! --}}
+
+{{! // use #each helper to loop over comments  }}

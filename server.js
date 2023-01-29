@@ -58,16 +58,11 @@ sequelize.sync({ force: false }).then(() => {
 // model's index.js -- completed  
 // models - completed
 // seed dummy data into blog posts - grueling. but completed. 
-
-// to do: 
-
-// create login/signup functionality 
-// views 
+// views - completed with displaying dummy data + comments/
 // controllers aka routes  - completed
 
-
-
-
+// to do: 
+// create login/signup functionality 
 // need help with: 
 
 

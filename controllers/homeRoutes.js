@@ -24,17 +24,19 @@ router.get("/home", async (req, res) => {
 });
 
 router.get('/posts', (req, res) => {
-  Post.findAll({ include: [User, Comment] }).then((post) => {
+  Post.findAll({ include: [User, {model: Comment, include: [User]}] }).then((post) => {
     const formattedPost = []
+    const formattedComment = []
     for (let i = 0; i < post.length; i++) { 
       const currentPost = post[i].get({plain: true});
       console.log('currentPost ~>', currentPost);
       currentPost.formattedDate = moment(currentPost.date_created).format(`MMMM DD, YYYY [at] h:mm a z`);
       formattedPost.push(currentPost);
+      formattedComment.push(currentPost.comments);
     }
-    res.render('posts', {formattedPost})
+    res.render('posts', {formattedPost, formattedComment})
   });
-});
+  });
 
 router.get("/login", async (req, res) => {
   try {
