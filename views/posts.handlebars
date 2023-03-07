@@ -23,6 +23,16 @@
     </div>
   </div>
 {{/each}}
+  
+<form id="new-post-form" action="/api/post/createPost" method="POST" class="bg-stone-400 text-black p-4 mt-4">
+  <input id="new-post-title">
+  <textarea id="new-post-description"></textarea>
+  <button id="submit-post-btn" type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+   <script src="/js/post.js"></script>
+
 
 {{!-- // Hello {{logged_in_user}}! --}}
 

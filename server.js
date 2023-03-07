@@ -61,9 +61,9 @@ sequelize.sync({ force: false }).then(() => {
 // views - completed with displaying dummy data + comments/
 // controllers aka routes  - completed
 
-// to do: 
+// to do/need help with: 
 // create login/signup functionality 
-// need help with: 
+
 
 
 

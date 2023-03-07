@@ -1,5 +1,7 @@
 # 014-mvc-tech_blog
-Tech Blog
+Tech Blog: Deployed Link: https://mvc-tech-blog-014.herokuapp.com/
+
+![The Tech Blog](https://github.com/JHoang6900/014-mvc_tech_blog/blob/main/screenshot.png)
 
 ## User Story
 

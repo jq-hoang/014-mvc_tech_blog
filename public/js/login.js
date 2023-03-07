@@ -11,7 +11,7 @@ submitBtn.addEventListener('click', (event) => {
     console.log('login_password ~>' ,login_password);
 
 
-  fetch('/login', {
+  fetch('/api/users/login', {
     method: 'POST',
     body: JSON.stringify({login_email, login_password}),
     headers: {
@@ -45,7 +45,7 @@ form.addEventListener('submit', (e) => {
   const email = document.querySelector('#email').value.trim();
   const password = document.querySelector('#password').value.trim();
   // Send the POST request to the API with the user data
-  fetch('/apis/createUser', { // where to post this sign up user info to? How do i get it to the database? 
+  fetch('/api/users/createUser', { // where to post this sign up user info to? How do i get it to the database? 
     method: 'POST',
     body: JSON.stringify({name, email, password}),
     headers: {
